@@ -1,16 +1,32 @@
 
-<h1>Lista de departamentos</h1>
-<table>
-	<thead>
-		<tr>
-			<th>#</th>
-			<th>Departamento</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="o in departamentos">
-			<td>{{o.id}}</td>
-			<td>{{o.descricao}}</td>
-		</tr>
-	</tbody>
-</table>
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Departamentos</div>
+	  <div class="panel-body">
+	    	
+	    	<button class="btn btn-md btn-success">Novo departamento</button>
+
+	  </div>
+
+	  <!-- Table -->
+	  <table class="table">
+	    <thead>
+			<tr>
+				<th>#</th>
+				<th>Departamento</th>
+				<th>Opções</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="o in departamentos">
+				<td>{{o.id}}</td>
+				<td>{{o.descricao}}</td>
+				<td>
+					<a ng-href="#/departamento/{{o.id}}/editar">Editar</a> | 							
+					<a ng-href="#/departamento/{{o.id}}/excluir">Excluir :(</a>
+				</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>
+
