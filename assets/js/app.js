@@ -119,7 +119,6 @@ app.config(function($routeProvider, appConfigProvider){
 			templateUrl: 'build/views/sala/cadastro.html',
 			controller: 'SalaInsertController',
 			title: 'Incluir sala'
-
 		})
 		
 		.when('/sala/:id/editar', {

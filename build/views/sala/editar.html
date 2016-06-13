@@ -1,16 +1,16 @@
 <div class="panel">
 	<div class="panel-heading">
-		<h2>Editar departamento</h2>
+		<h2>Editar sala</h2>
 	</div>
 	<form class="form-horizontal" name="form" role="form" method="POST" ng-submit="salvar()">
 		<div class="panel-body">
 			
 			<div class="form-group" ng-class="{'has-error': !form.descricao.$valid && form.descricao.$touched }">
-				<label class="col-md-4 control-label">Departamento:</label>
+				<label class="col-md-4 control-label">Sala:</label>
 				<div class="col-md-6">
-					<input type="text" class="form-control" name="descricao" ng-model="departamento.descricao" required>
+					<input type="text" class="form-control" name="descricao" ng-model="sala.descricao" required>
 						<div ng-messages="form.descricao.$error" class="help-block" ng-show="form.descricao.$touched">
-							<div ng-message="required">Nome do departamento deve ser informado.</div>
+							<div ng-message="required">Nome do sala deve ser informado.</div>
 						</div>
 					</div>
 				</div>						
