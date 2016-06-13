@@ -8,4 +8,8 @@ angular.module('app.controllers')
 			
 		$scope.salas = Sala.query();
 
+		$scope.novo = function(){
+			$location.path('/sala/cadastro');
+		};
+
 	}]);

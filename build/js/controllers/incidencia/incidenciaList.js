@@ -8,4 +8,8 @@ angular.module('app.controllers')
 			
 		$scope.incidencias = Incidencia.query();
 
+		$scope.novo = function(){
+			$location.path('/incidencia/cadastro');
+		}; 
+
 	}]);

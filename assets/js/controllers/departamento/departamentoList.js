@@ -8,4 +8,9 @@ angular.module('app.controllers')
 			
 		$scope.departamentos = Departamento.query();
 
+		$scope.novo = function(){
+
+			$location.path('/departamento/cadastro');
+		};
+
 	}]);

@@ -8,4 +8,8 @@ angular.module('app.controllers')
 			
 		$scope.motivos = Motivo.query();
 
+		$scope.novo = function(){
+			$location.path('/motivo/cadastro');
+		};
+
 	}]);
