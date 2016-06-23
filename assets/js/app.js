@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute','app.controllers', 'app.services']);
+var app = angular.module('app', ['ngRoute','app.controllers', 'app.services', 'ngNotify', 'mp.datePicker']);
 
 angular.module('app.controllers', []);
 angular.module('app.services', ['ngResource']);
@@ -21,9 +21,20 @@ app.provider('appConfig', function(){
 
 app.config(function($routeProvider, appConfigProvider){
 	$routeProvider
+		
+		/*
+		 * LOGIN
+		 */
 		.when('/login', {
 			templateUrl: 'build/views/login.html',
 			controller: 'LoginController'
+		})
+
+		/*
+		 * HOME
+		 */
+		.when('/home', {
+			templateUrl: 'build/views/home.html'
 		})
 
 		/*
@@ -131,6 +142,58 @@ app.config(function($routeProvider, appConfigProvider){
 			templateUrl: 'build/views/sala/excluir.html',
 			controller: 'SalaRemoveController',
 			title: 'Remover sala'
+		})
+
+		/*
+		 * USUARIO
+		 */
+		.when('/usuario', {
+			templateUrl: 'build/views/user/lista.html',
+			controller: 'UserListController'
+		})
+
+		.when('/usuario/cadastro', {
+			templateUrl: 'build/views/user/cadastro.html',
+			controller: 'UserInsertController',
+			title: 'Incluir usuário'
+		})
+		
+		.when('/usuario/:id/editar', {
+			templateUrl: 'build/views/user/editar.html',
+			controller: 'UserEditController',
+			title: 'Editar usuário'
+		})
+
+		.when('/usuario/:id/excluir' , {
+			templateUrl: 'build/views/user/excluir.html',
+			controller: 'UserRemoveController',
+			title: 'Remover usuário'
+		})
+
+		/*
+		 * RESERVA
+		 */
+		.when('/reserva', {
+			templateUrl: 'build/views/reserva/lista.html',
+			controller: 'ReservaListController'
+		})
+
+		.when('/reserva/cadastro', {
+			templateUrl: 'build/views/reserva/cadastro.html',
+			controller: 'ReservaInsertController',
+			title: 'Incluir reserva'
+		})
+		
+		.when('/reserva/:id/editar', {
+			templateUrl: 'build/views/reserva/editar.html',
+			controller: 'ReservaEditController',
+			title: 'Editar reserva'
+		})
+
+		.when('/reserva/:id/excluir' , {
+			templateUrl: 'build/views/reserva/excluir.html',
+			controller: 'ReservaRemoveController',
+			title: 'Remover reserva'
 		})
 
 

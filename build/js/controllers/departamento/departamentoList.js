@@ -13,4 +13,9 @@ angular.module('app.controllers')
 			$location.path('/departamento/cadastro');
 		};
 
+		$scope.menu = function(){
+
+			$location.path('/home');
+		};
+
 	}]);

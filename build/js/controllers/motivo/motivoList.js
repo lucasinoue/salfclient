@@ -12,4 +12,8 @@ angular.module('app.controllers')
 			$location.path('/motivo/cadastro');
 		};
 
+		$scope.menu = function(){
+			$location.path('/home');
+		};
+
 	}]);

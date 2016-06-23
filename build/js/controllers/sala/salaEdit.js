@@ -1,10 +1,11 @@
 angular.module('app.controllers')
-	.controller('SalaEditController', ['$scope', '$location', '$routeParams','Sala', 
+	.controller('SalaEditController', ['$scope', '$location', '$routeParams','Sala', 'ngNotify',
 		function(
 			$scope, 
 			$location, 
 			$routeParams, 
-			Sala){
+			Sala,
+			ngNotify){
 		
 		$scope.sala = new Sala.show({id: $routeParams.id});
 
@@ -15,6 +16,7 @@ angular.module('app.controllers')
 					            $scope.sala, 
 			    function(){
 					$location.path('/sala');
+					ngNotify.set('Cadastro atualizado com sucesso!','success');
 				});
 			}
 		};

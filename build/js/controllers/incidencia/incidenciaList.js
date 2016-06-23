@@ -10,6 +10,10 @@ angular.module('app.controllers')
 
 		$scope.novo = function(){
 			$location.path('/incidencia/cadastro');
-		}; 
+		};
+
+		$scope.menu = function(){
+			$location.path('/home');
+		};  
 
 	}]);

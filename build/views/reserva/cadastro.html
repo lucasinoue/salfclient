@@ -1,0 +1,65 @@
+<div class="panel">
+	<div class="panel-heading">
+		<h2 align="center">Nova reserva</h2>
+	</div>
+	<form class="form-horizontal" name="form" role="form" method="POST" ng-submit="salvar()">
+		<div class="panel-body">
+			
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Usário:</label>
+				<div class="col-md-6">
+					<select name="user" ng-model="reserva.users">
+						<option ng-repeat="o in users" value="{{o.id}}">{{o.name}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Sala:</label>
+				<div class="col-md-6">
+					<select name="sala" ng-model="reserva.salas">
+						<option ng-repeat="o in salas" value="{{o.id}}">{{o.descricao}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Data:</label>
+				<div class="col-md-6">
+					<date-picker ng-model="reserva.data">
+					</date-picker><br>
+					<input type="text" ng-model="reserva.data">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Hora:</label>
+				<div class="col-md-6">
+					<select name="hora" ng-model="reserva.horas">
+						<option ng-repeat="o in horas" value="{{o.id}}">{{o.descricao}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-md-4 control-label">Motivo:</label>
+				<div class="col-md-6">
+					<select name="motivo" ng-model="reserva.motivos">
+						<option ng-repeat="o in motivos" value="{{o.id}}">{{o.descricao}}</option>
+					</select>
+				</div>
+			</div>					
+
+
+			<div class="form-group">
+				<div class="col-md-6 col-md-offset-4">
+					<button type="button" class="btn btn-primary" ng-click="voltar()">Voltar</button>
+					<button type="submit" class="btn btn-success">Salvar</button>
+				</div>
+			</div>
+
+			
+		</div>
+	</form>
+</div>

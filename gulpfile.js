@@ -35,7 +35,10 @@ config.vendor_path_js = [
 	config.bower_path + '/angular-animate/angular-animate.min.js',
 	config.bower_path + '/angular-messages/angular-messages.min.js',
 	config.bower_path + '/angular-bootstrap/ui-bootstrap.min.js',
-	config.bower_path + '/angular-strap/dist/modules/navbar.min.js'
+	config.bower_path + '/angular-strap/dist/modules/navbar.min.js',
+	config.bower_path + '/ng-notify/dist/ng-notify.min.js',
+	config.bower_path + '/angular-date-picker/angular-date-picker.js'
+
 ];
 
 
@@ -52,7 +55,9 @@ config.build_path_css = config.build_path + '/css';
 //caminho dos css de terceiros
 config.build_vendor_path_css = config.build_path_css + '/vendor';
 config.vendor_path_css = [
-	config.bower_path + '/bootstrap/dist/css/bootstrap.min.css'
+	config.bower_path + '/bootstrap/dist/css/bootstrap.min.css',
+	config.bower_path + '/ng-notify/dist/ng-notify.min.css',
+	config.bower_path + '/angular-date-picker/angular-date-picker.css'
 ];
 
 /*==========================================================================*/

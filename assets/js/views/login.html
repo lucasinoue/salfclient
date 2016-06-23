@@ -1,0 +1,39 @@
+<div class="panel">
+	<div class="panel-heading">
+		<h2 align="center">Login</h2>
+	</div>
+	<form class="form-horizontal" name="form" role="form" method="POST" ng-submit="login()">
+		<div class="panel-body">
+			
+			<div class="form-group" ng-class="{'has-error': !form.usuario.$valid && form.usuario.$touched }">
+				<label class="col-md-4 control-label">Usuário:</label>
+				<div class="col-md-6">
+					<input type="text" class="form-control" name="usuario" ng-model="login.usuario" width="10" required>
+						<div ng-messages="form.usuario.$error" class="help-block" ng-show="form.usuario.$touched">
+							<div ng-message="required">Usuário deve ser informado.</div>
+						</div>
+				</div>
+			</div>
+
+
+			<div class="form-group" ng-class="{'has-error': !form.senha.$valid && form.senha.$touched }">
+				<label class="col-md-4 control-label">Senha:</label>
+				<div class="col-md-6">
+					<input type="password" class="form-control" name="senha" ng-model="login.senha" size="10" required>
+						<div ng-messages="form.senha.$error" class="help-block" ng-show="form.senha.$touched">
+							<div ng-message="required">Senha deve ser informado.</div>
+						</div>
+				</div>
+			</div>						
+
+
+				<div class="form-group">
+					<div class="col-md-6 col-md-offset-4">
+						<button type="submit" class="btn btn-success">Login</button>
+					</div>
+				</div>
+
+			
+		</div>
+	</form>
+</div>

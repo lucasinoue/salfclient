@@ -1,11 +1,12 @@
 
 angular.module('app.controllers')
-	.controller('MotivoEditController', ['$scope', '$location', '$routeParams','Motivo', 
+	.controller('MotivoEditController', ['$scope', '$location', '$routeParams','Motivo', 'ngNotify',
 		function(
 			$scope, 
 			$location, 
 			$routeParams, 
-			Motivo){
+			Motivo,
+			ngNotify){
 		
 		$scope.motivo = new Motivo.show({id: $routeParams.id});
 
@@ -16,6 +17,7 @@ angular.module('app.controllers')
 					            $scope.motivo, 
 			    function(){
 					$location.path('/motivo');
+					ngNotify.set('Cadastro atualizado com sucesso!','success');
 				});
 			}
 		};

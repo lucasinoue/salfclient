@@ -1,0 +1,24 @@
+	
+<div class="col-lg-6 col-lg-offset-3">			
+	<div class="panel panel-danger">
+		<div class="panel-heading">
+			<h2 align="center">Excluir usuário</h2>
+		</div>
+			<div class="panel-body">
+
+				<p>Deseja realmente excluir?</p>
+
+				<p class="bg-info"><strong>Usuário: </strong> {{user.id}} - {{user.name}}</p>
+
+				
+				<div class="form-group">
+					<div class="col-md-6 col-md-offset-4">
+						<button type="button" class="btn btn-primary" ng-click="voltar()">Voltar</button>
+						<button type="button" class="btn btn-danger" ng-click="remove()">Excluir</button>
+					</div>
+				</div>
+
+			</div>
+		</form>
+	</div>
+</div>

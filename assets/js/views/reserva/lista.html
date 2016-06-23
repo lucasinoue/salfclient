@@ -1,0 +1,33 @@
+
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Reservas</div>
+	  <div class="panel-body">
+	    	
+	    	<button ng-click="novo()" class="btn btn-md btn-success">Nova reserva</button>
+	    	<button ng-click="menu()" class="btn btn-md btn-primary">Voltar ao Menu</button>
+
+	  </div>
+
+	  <!-- Table -->
+	  <table class="table">
+	    <thead>
+			<tr>
+				<th>#</th>
+				<th>Reservas</th>
+				<th>Opções</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="o in reservas">
+				<td>{{o.id}}</td>
+				<td>{{o.salas}}</td>
+				<td>
+					<a ng-href="#/reserva/{{o.id}}/editar">Editar</a> | 							
+					<a ng-href="#/reserva/{{o.id}}/excluir">Excluir :(</a>
+				</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>
+

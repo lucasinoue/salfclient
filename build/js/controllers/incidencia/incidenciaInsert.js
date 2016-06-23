@@ -1,12 +1,13 @@
 
 angular.module('app.controllers')
-	.controller('IncidenciaInsertController', ['$scope', '$location', 'Incidencia', function($scope, $location, Incidencia){
+	.controller('IncidenciaInsertController', ['$scope', '$location', 'Incidencia', 'ngNotify', function($scope, $location, Incidencia, ngNotify){
 		
 		$scope.incidencia = new Incidencia();
 
 		$scope.salvar = function() {
 			$scope.incidencia.$save().then(function() {
 					$location.path('/incidencia');
+					ngNotify.set('Incidência cadastrada com sucesso!','success');
 				});
 		}
 

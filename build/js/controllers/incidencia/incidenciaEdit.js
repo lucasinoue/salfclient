@@ -1,11 +1,12 @@
 
 angular.module('app.controllers')
-	.controller('IncidenciaEditController', ['$scope', '$location', '$routeParams','Incidencia', 
+	.controller('IncidenciaEditController', ['$scope', '$location', '$routeParams','Incidencia', 'ngNotify',
 		function(
 			$scope, 
 			$location, 
 			$routeParams, 
-			Incidencia){
+			Incidencia,
+			ngNotify){
 		
 		$scope.incidencia = new Incidencia.show({id: $routeParams.id});
 
@@ -16,6 +17,7 @@ angular.module('app.controllers')
 					            $scope.incidencia, 
 			    function(){
 					$location.path('/incidencia');
+					ngNotify.set('Cadastro atualizado com sucesso!','success');
 				});
 			}
 		};

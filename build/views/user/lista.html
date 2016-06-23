@@ -1,0 +1,33 @@
+
+	<div class="panel panel-default">
+	  <!-- Default panel contents -->
+	  <div class="panel-heading">Usuários</div>
+	  <div class="panel-body">
+	    	
+	    	<button ng-click="novo()" class="btn btn-md btn-success">Novo usuário</button>
+	    	<button ng-click="menu()" class="btn btn-md btn-primary">Voltar ao Menu</button>
+
+	  </div>
+
+	  <!-- Table -->
+	  <table class="table">
+	    <thead>
+			<tr>
+				<th>#</th>
+				<th>Usuário</th>
+				<th>Opções</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="o in user">
+				<td>{{o.id}}</td>
+				<td>{{o.name}}</td>
+				<td>
+					<a ng-href="#/usuario/{{o.id}}/editar">Editar</a> | 							
+					<a ng-href="#/usuario/{{o.id}}/excluir">Excluir :(</a>
+				</td>
+			</tr>
+		</tbody>
+	  </table>
+	</div>
+

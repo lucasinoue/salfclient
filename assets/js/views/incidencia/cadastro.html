@@ -1,16 +1,16 @@
 <div class="panel">
 	<div class="panel-heading">
-		<h2>Novo incidencia</h2>
+		<h2 align="center">Novo incidência</h2>
 	</div>
 	<form class="form-horizontal" name="form" role="form" method="POST" ng-submit="salvar()">
 		<div class="panel-body">
 			
 			<div class="form-group" ng-class="{'has-error': !form.descricao.$valid && form.descricao.$touched }">
-				<label class="col-md-4 control-label">Incidencia:</label>
+				<label class="col-md-4 control-label">Incidência:</label>
 				<div class="col-md-6">
 					<input type="text" class="form-control" name="descricao" ng-model="incidencia.descricao" required>
 						<div ng-messages="form.descricao.$error" class="help-block" ng-show="form.descricao.$touched">
-							<div ng-message="required">Nome do incidencia deve ser informada.</div>
+							<div ng-message="required">Nome do incidência deve ser informada.</div>
 						</div>
 					</div>
 				</div>						
