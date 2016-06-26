@@ -14,14 +14,16 @@
 	    <thead>
 			<tr>
 				<th>#</th>
-				<th>Reservas</th>
+				<th>Usuário</th>
+				<th>Sala</th>
 				<th>Opções</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="o in reservas">
 				<td>{{o.id}}</td>
-				<td>{{o.salas}}</td>
+				<td>{{o.user_id}}</td>
+				<td>{{o.sala_id}}</td>
 				<td>
 					<a ng-href="#/reserva/{{o.id}}/editar">Editar</a> | 							
 					<a ng-href="#/reserva/{{o.id}}/excluir">Excluir :(</a>

@@ -6,48 +6,63 @@
 		<div class="panel-body">
 			
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error': !form.usuario.$valid && form.usuario.$touched }">
 				<label class="col-md-4 control-label">Usário:</label>
 				<div class="col-md-6">
-					<select name="user" ng-model="reserva.users">
+					<select name="usuario" class="form-control" ng-model="reserva.user_id" required="required">
 						<option ng-repeat="o in users" value="{{o.id}}">{{o.name}}</option>
 					</select>
+					<div ng-messages="form.usuario.$error" class="help-block" ng-show="!form.usuario.$valid && form.usuario.$touched">
+							<div ng-message="required">Usuário da reserva deve ser informado.</div>
+					</div>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error': !form.sala.$valid && form.sala.$touched }">
 				<label class="col-md-4 control-label">Sala:</label>
 				<div class="col-md-6">
-					<select name="sala" ng-model="reserva.salas">
+					<select class="form-control" name="sala" ng-model="reserva.sala_id" required="required">
 						<option ng-repeat="o in salas" value="{{o.id}}">{{o.descricao}}</option>
 					</select>
+					<div ng-messages="form.sala.$error" class="help-block" ng-show="!form.sala.$valid && form.sala.$touched">
+							<div ng-message="required">Sala da reserva deve ser informada.</div>
+					</div>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error': !form.data.$valid && form.data.$touched }">
 				<label class="col-md-4 control-label">Data:</label>
 				<div class="col-md-6">
-					<date-picker ng-model="reserva.data">
+					<date-picker ng-model="reserva.data" name="data">
 					</date-picker><br>
-					<input type="text" ng-model="reserva.data">
+					<input name="data" type="text" ng-model="reserva.data" readonly>
+					<div ng-messages="form.data.$error" class="help-block" ng-show="!form.data.$valid && form.data.$touched">
+							<div ng-message="required">Data da reserva deve ser informada.</div>
+					</div>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error': !form.hora.$valid && form.hora.$touched }">
 				<label class="col-md-4 control-label">Hora:</label>
 				<div class="col-md-6">
-					<select name="hora" ng-model="reserva.horas">
-						<option ng-repeat="o in horas" value="{{o.id}}">{{o.descricao}}</option>
+					<select class="form-control" name="hora" ng-model="reserva.horario_id" required="required">
+						<option ng-repeat="o in horarios" value="{{o.id}}">{{o.descricao}}</option>
 					</select>
+					<div ng-messages="form.hora.$error" class="help-block" ng-show="!form.hora.$valid && form.hora.$touched">
+							<div ng-message="required">Horário da reserva deve ser informado.</div>
+					</div>
 				</div>
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error': !form.motivo.$valid && form.motivo.$touched }">
 				<label class="col-md-4 control-label">Motivo:</label>
 				<div class="col-md-6">
-					<select name="motivo" ng-model="reserva.motivos">
+					<select class="form-control" name="motivo" ng-model="reserva.motivo_id" required="required">
 						<option ng-repeat="o in motivos" value="{{o.id}}">{{o.descricao}}</option>
 					</select>
+					<div ng-messages="form.motivo.$error" class="help-block" ng-show="!form.motivo.$valid && form.motivo.$touched">
+							<div ng-message="required">Motivo da reserva deve ser informado.</div>
+					</div>
 				</div>
 			</div>					
 

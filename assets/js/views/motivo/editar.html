@@ -9,7 +9,7 @@
 				<label class="col-md-4 control-label">Motivo:</label>
 				<div class="col-md-6">
 					<input type="text" class="form-control" name="descricao" ng-model="motivo.descricao" required>
-						<div ng-messages="form.descricao.$error" class="help-block" ng-show="form.descricao.$touched">
+						<div ng-messages="form.descricao.$error" class="help-block" ng-show="!form.descricao.$valid && form.descricao.$touched">
 							<div ng-message="required">Nome do motivo deve ser informado.</div>
 						</div>
 					</div>

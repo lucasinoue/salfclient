@@ -9,7 +9,7 @@
 				<label class="col-md-4 control-label">Nome:</label>
 				<div class="col-md-6">
 					<input type="text" class="form-control" name="nome" ng-model="user.name" required>
-						<div ng-messages="form.nome.$error" class="help-block" ng-show="form.nome.$touched">
+						<div ng-messages="form.nome.$error" class="help-block" ng-show="!form.nome.$valid && form.nome.$touched">
 							<div ng-message="required">Nome do usuário deve ser informado.</div>
 						</div>
 				</div>
@@ -19,7 +19,7 @@
 				<label class="col-md-4 control-label">Email:</label>
 				<div class="col-md-6">
 					<input type="text" class="form-control" name="email" ng-model="user.email" required>
-						<div ng-messages="form.email.$error" class="help-block" ng-show="form.email.$touched">
+						<div ng-messages="form.email.$error" class="help-block" ng-show="!form.email.$valid && form.email.$touched">
 							<div ng-message="required">Email do usuário deve ser informado.</div>
 						</div>
 				</div>
@@ -30,15 +30,23 @@
 				<div class="col-md-6">
 					<input type="radio" name="tipo" ng-model="user.tipo" ng-value="true"> Administrador<br>
   					<input type="radio" name="tipo" ng-model="user.tipo" ng-value="false"> Professor
+  					<div ng-messages="form.tipo.$error" class="help-block" ng-show="!form.tipo.$valid && form.tipo.$touched">
+							<div ng-message="required">Tipo do usuário deve ser informado.</div>
+					</div>
 				</div>
 
 			</div>
 
-			<div class="form-group">
+			<div class="form-group" ng-class="{'has-error': !form.departamento.$valid && form.departamento.$touched }">
 				<label class="col-md-4 control-label">Departamento:</label>
 				<div class="col-md-6">
-					<select name="departamento" class="form-control" ng-model="user.departamento_id" ng-options="o.descricao for o in departamentos track by o.id">
-					</select>
+					<div>
+						<select class="form-control" ng-model="user.departamento_id" ng-options="o.id as o.descricao for o in departamentos" required="required">
+						</select>
+						<div ng-messages="form.departamento.$error" class="help-block" ng-show="!form.departamento.$valid && form.departamento.$touched">
+							<div ng-message="required">Departamento do usuário deve ser informado.</div>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -46,7 +54,7 @@
 				<label class="col-md-4 control-label">Senha:</label>
 				<div class="col-md-6">
 					<input type="password" placeholder="Senha" class="form-control" name="senha" ng-model="user.password" required>
-						<div ng-messages="form.senha.$error" class="help-block" ng-show="form.senha.$touched">
+						<div ng-messages="form.senha.$error" class="help-block" ng-show="!form.senha.$valid && form.senha.$touched">
 							<div ng-message="required">Senha do usuário deve ser informada.</div>
 						</div>
 				</div>

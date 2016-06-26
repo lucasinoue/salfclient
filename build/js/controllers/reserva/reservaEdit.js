@@ -1,6 +1,6 @@
 
 angular.module('app.controllers')
-	.controller('ReservaEditController', ['$scope', '$location', '$routeParams','Reserva', 'Sala', 'User', 'Motivo', 'ngNotify', 
+	.controller('ReservaEditController', ['$scope', '$location', '$routeParams','Reserva', 'Sala', 'User', 'Motivo', 'Horarios', 'ngNotify', 
 		function(
 			$scope, 
 			$location, 
@@ -9,13 +9,15 @@ angular.module('app.controllers')
 			Sala,
 			User,
 			Motivo,
+			Horarios,
 			ngNotify){
 		
 		$scope.reserva = new Reserva.show({id: $routeParams.id});
 		$scope.salas = new Sala.query();
 		$scope.users = new User.query();
 		$scope.motivos = new Motivo.query();
-
+		$scope.horarios = new Horarios.query();
+		
 		$scope.salvar = function(){
 			if($scope.form.$valid){
 

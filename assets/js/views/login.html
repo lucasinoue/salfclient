@@ -9,7 +9,7 @@
 				<label class="col-md-4 control-label">Usuário:</label>
 				<div class="col-md-6">
 					<input type="text" class="form-control" name="usuario" ng-model="login.usuario" width="10" required>
-						<div ng-messages="form.usuario.$error" class="help-block" ng-show="form.usuario.$touched">
+						<div ng-messages="form.usuario.$error" class="help-block" ng-show="!form.usuario.$valid && form.usuario.$touched">
 							<div ng-message="required">Usuário deve ser informado.</div>
 						</div>
 				</div>
@@ -20,7 +20,7 @@
 				<label class="col-md-4 control-label">Senha:</label>
 				<div class="col-md-6">
 					<input type="password" class="form-control" name="senha" ng-model="login.senha" size="10" required>
-						<div ng-messages="form.senha.$error" class="help-block" ng-show="form.senha.$touched">
+						<div ng-messages="form.senha.$error" class="help-block" ng-show="!form.senha.$valid && form.senha.$touched">
 							<div ng-message="required">Senha deve ser informado.</div>
 						</div>
 				</div>

@@ -10,7 +10,7 @@ angular.module('app.services')
 
 			update:{
 				method:'PUT',
-				url: appConfig.baseUrl + '/sala/:id/editar',
+				url: appConfig.baseUrl + '/sala/:id',
 				isArray: false
 			},
 			show:{

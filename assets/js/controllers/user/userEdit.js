@@ -10,6 +10,7 @@ angular.module('app.controllers')
 			ngNotify){
 		
 		$scope.user = new User.show({id: $routeParams.id});
+		
 		$scope.departamentos = new Departamento.query();
 
 		$scope.salvar = function(){
